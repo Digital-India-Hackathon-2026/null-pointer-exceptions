@@ -1,0 +1,3 @@
+# NULL POINTER EXCEPTIONS
+
+Repository for Hackathon Team NULL POINTER EXCEPTIONS.
