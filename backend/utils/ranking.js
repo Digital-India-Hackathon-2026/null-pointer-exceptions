@@ -1,7 +1,3 @@
-// Core matching + ranking logic. Pure functions, no AI here —
-// this is the deterministic, judge-proof layer.
-// Produces two tiers: "confirmed" matches and "possible" matches
-// (where a "Not Sure" answer meant we couldn't rule it out either).
 
 function checkIncome(scheme, profile) {
   const maxIncome = scheme.eligibility.maxIncome;
