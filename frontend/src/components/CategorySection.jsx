@@ -22,15 +22,17 @@ export default function CategorySection({ category, schemes, onSelectScheme, sta
         <span className="category-dot" style={{ background: meta.color }}></span>
         <h3>{meta.label}</h3>
       </div>
-      {schemes.map((scheme, i) => (
-        <SchemeCard
-          key={scheme._id + category}
-          scheme={scheme}
-          rank={startRank + i}
-          accentColor={meta.color}
-          onClick={onSelectScheme}
-        />
-      ))}
+      <div className="scheme-grid">
+        {schemes.map((scheme, i) => (
+          <SchemeCard
+            key={scheme._id + category}
+            scheme={scheme}
+            rank={startRank + i}
+            accentColor={meta.color}
+            onClick={onSelectScheme}
+          />
+        ))}
+      </div>
     </div>
   );
 }

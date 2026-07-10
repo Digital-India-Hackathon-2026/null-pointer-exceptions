@@ -4,6 +4,12 @@ function authHeaders(token) {
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
+export async function getAllSchemes() {
+  const res = await fetch(`${BASE}/schemes`);
+  if (!res.ok) throw new Error("Could not fetch schemes");
+  return res.json();
+}
+
 export async function signup(email, password) {
   const res = await fetch(`${BASE}/auth/signup`, {
     method: "POST",

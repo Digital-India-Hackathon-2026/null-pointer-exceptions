@@ -25,7 +25,7 @@ export default function AuthForm({ onAuthSuccess }) {
   }
 
   return (
-    <div className="card">
+    <div className="card auth-card">
       <h2>{mode === "login" ? "Welcome back" : "Create your account"}</h2>
       <p style={{ color: "var(--ink-muted)", marginTop: -8, fontSize: "0.9rem" }}>
         Save your details once, check your eligible schemes anytime.
