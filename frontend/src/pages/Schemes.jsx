@@ -109,8 +109,13 @@ const Schemes = () => {
             <Card key={s.id} className="p-6 border border-slate-200 rounded-2xl card-lift bg-white">
               <div className="flex items-start justify-between gap-3">
                 <Badge variant="outline" className="border-slate-200 bg-slate-50 text-slate-700 font-medium">
-                  {s.ministry.replace('Ministry of ', '')}
+                  {(s.ministry || s.provider || '').replace('Ministry of ', '')}
                 </Badge>
+                {s.type === 'private' && (
+                  <Badge variant="outline" className="border-amber-200 bg-amber-50 text-amber-700 font-medium">
+                    Private
+                  </Badge>
+                )}
                 <button
                   onClick={() => onToggleSave(s.id)}
                   className="text-slate-400 hover:text-emerald-700 transition-colors"

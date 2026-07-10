@@ -110,7 +110,7 @@ const EligibilityChecker = () => {
                 <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-50">
                   <CheckCircle2 size={12} className="mr-1" /> Eligible
                 </Badge>
-                <div className="text-xs text-slate-500">{s.ministry.replace('Ministry of ', '')}</div>
+                <div className="text-xs text-slate-500">{(s.ministry || s.provider || '').replace('Ministry of ', '')}</div>
               </div>
               <h3 className="mt-3 text-lg font-semibold text-slate-900">{s.title}</h3>
               <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">{s.description}</p>

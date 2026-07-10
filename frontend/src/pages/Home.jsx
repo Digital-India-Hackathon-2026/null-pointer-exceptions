@@ -143,7 +143,7 @@ const Home = () => {
               <Card key={s.id} className="card-lift p-6 bg-white border border-slate-200 rounded-2xl">
                 <div className="flex items-start justify-between gap-3">
                   <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700 font-medium">
-                    {s.ministry.replace('Ministry of ', '')}
+                    {(s.ministry || s.provider || '').replace('Ministry of ', '')}
                   </Badge>
                   <div className="text-xs text-slate-500">{s.state}</div>
                 </div>

@@ -50,7 +50,10 @@ const SchemeDetail = () => {
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-50">{scheme.ministry.replace('Ministry of ', '')}</Badge>
+            <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-50">{(scheme.ministry || scheme.provider || '').replace('Ministry of ', '')}</Badge>
+            {scheme.type === 'private' && (
+              <span className="text-xs px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Private</span>
+            )}
             {scheme.tags.map((t) => (
               <span key={t} className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700">{t}</span>
             ))}
@@ -133,7 +136,7 @@ const SchemeDetail = () => {
 
             <Separator className="my-5" />
             <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2 text-slate-600"><Building2 size={15} /> {scheme.ministry}</div>
+              <div className="flex items-center gap-2 text-slate-600"><Building2 size={15} /> {scheme.ministry || scheme.provider}</div>
               <div className="flex items-center gap-2 text-slate-600"><MapPin size={15} /> {scheme.state}</div>
               <div className="flex items-center gap-2 text-slate-600"><Calendar size={15} /> {scheme.deadline}</div>
             </div>

@@ -7,7 +7,7 @@ export const translations = {
     profile: 'My Profile',
     getStarted: 'Check Eligibility',
     // Hero
-    heroTag: 'Government Schemes Portal',
+    heroTag: 'Schemes Portal',
     heroTitle: 'Find schemes you actually qualify for',
     heroSubtitle: 'A smart eligibility engine that matches you with government schemes and scholarships — for students, farmers, employees, women, seniors and entrepreneurs.',
     startChecker: 'Start Eligibility Check',
