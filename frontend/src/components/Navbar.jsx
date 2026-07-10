@@ -33,7 +33,7 @@ const Navbar = () => {
               <Sparkles className="h-4.5 w-4.5 text-white" size={18} />
             </div>
             <div className="leading-tight">
-              <div className="text-[15px] font-semibold text-slate-900 tracking-tight">SchemeSaathi</div>
+              <div className="text-[15px] font-semibold text-slate-900 tracking-tight">BenefitBridge</div>
               <div className="text-[10px] uppercase tracking-[0.16em] text-slate-500">Eligibility Engine</div>
             </div>
           </Link>

@@ -16,14 +16,14 @@ const Footer = () => {
                 <Sparkles className="h-4 w-4 text-white" size={16} />
               </div>
               <div>
-                <div className="text-[15px] font-semibold text-slate-900">SchemeSaathi</div>
+                <div className="text-[15px] font-semibold text-slate-900">BenefitBridge</div>
                 <div className="text-[10px] uppercase tracking-[0.16em] text-slate-500">Eligibility Engine</div>
               </div>
             </div>
             <p className="text-sm text-slate-600 max-w-md leading-relaxed">{t('footerTag')}</p>
             <div className="mt-5 flex items-center gap-4 text-slate-500">
               <a href="https://github.com/Digital-India-Hackathon-2026" target="_blank" rel="noreferrer" className="hover:text-slate-900"><FaGithub size={18} /></a>
-              <a href="mailto:hello@schemesaathi.in" className="hover:text-slate-900"><Mail size={18} /></a>
+              <a href="mailto:hello@BenefitBridge.in" className="hover:text-slate-900"><Mail size={18} /></a>
               <span className="inline-flex items-center gap-1.5 text-xs"><MapPin size={14} /> New Delhi, India</span>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
-          <div>© {new Date().getFullYear()} SchemeSaathi. A citizen initiative.</div>
+          <div>© {new Date().getFullYear()} BenefitBridge. A citizen initiative.</div>
           <div>Built for Digital India Hackathon 2026</div>
         </div>
       </div>
