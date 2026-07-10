@@ -9,7 +9,7 @@ export default function SchemeDetailModal({ scheme, onClose }) {
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}><FaTimes /></button>
         <h2>{scheme.name}</h2>
-        <p style={{ color: "var(--text-muted)", marginTop: -8 }}>{scheme.source} • {scheme.providerType === "government" ? "Government Scheme" : "Private Scheme"}</p>
+        <p style={{ color: "var(--ink-muted)", marginTop: -8 }}>{scheme.source} • {scheme.providerType === "government" ? "Government Scheme" : "Private Scheme"}</p>
 
         {scheme.matchTier === "possible" && (
           <div style={{ background: "#fee2e2", color: "#991b1b", padding: 12, borderRadius: 10, marginBottom: 14, display: "flex", gap: 8, alignItems: "flex-start" }}>

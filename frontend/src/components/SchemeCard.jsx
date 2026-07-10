@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCoins, FaBolt, FaClock, FaExclamationTriangle, FaLandmark, FaBuilding } from "react-icons/fa";
+import { FaCoins, FaBolt, FaClock, FaExclamationTriangle, FaLandmark, FaBuilding, FaStar } from "react-icons/fa";
 
 function formatMoney(amount) {
   if (!amount) return "Non-monetary benefit";
@@ -7,17 +7,26 @@ function formatMoney(amount) {
   return `₹${amount.toLocaleString("en-IN")}`;
 }
 
-export default function SchemeCard({ scheme, rank, onClick }) {
+export default function SchemeCard({ scheme, rank, accentColor, onClick }) {
   const { matchInsights, matchTier } = scheme;
+  const isTopRank = rank === 1;
 
   return (
-    <div className="scheme-card" onClick={() => onClick(scheme)}>
+    <div
+      className="scheme-card"
+      style={{ borderLeftColor: accentColor }}
+      onClick={() => onClick(scheme)}
+    >
       <div className="scheme-card-top">
         <div>
           <div className="scheme-name">{scheme.name}</div>
           <div className="scheme-source">{scheme.source}</div>
         </div>
-        <span className="rank-pill">#{rank}</span>
+        {isTopRank ? (
+          <span className="priority-seal"><FaStar size={10} /> DO THIS FIRST</span>
+        ) : (
+          <span className="rank-pill">#{rank}</span>
+        )}
       </div>
 
       <div className="badge-row">

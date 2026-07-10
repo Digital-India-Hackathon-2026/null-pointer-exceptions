@@ -81,29 +81,31 @@ export default function App() {
     <div className="app-shell">
       <Navbar isLoggedIn={!!token} onLogout={handleLogout} />
 
-      {!token && <AuthForm onAuthSuccess={handleAuthSuccess} />}
+      <div className="content-area">
+        {!token && <AuthForm onAuthSuccess={handleAuthSuccess} />}
 
-      {token && view === "select" && (
-        <ProfileSelector profiles={profiles} onSelect={handleSelectProfile} onAddNew={handleAddNew} />
-      )}
+        {token && view === "select" && (
+          <ProfileSelector profiles={profiles} onSelect={handleSelectProfile} onAddNew={handleAddNew} />
+        )}
 
-      {token && view === "form" && (
-        <ProfileForm
-          isSelf={formTargetIsSelf}
-          onSubmit={handleProfileSubmit}
-          onCancel={() => setView("select")}
-        />
-      )}
+        {token && view === "form" && (
+          <ProfileForm
+            isSelf={formTargetIsSelf}
+            onSubmit={handleProfileSubmit}
+            onCancel={() => setView("select")}
+          />
+        )}
 
-      {token && view === "results" && (
-        <ResultsPage
-          result={matchResult}
-          profileLabel={activeProfile?.label}
-          onBack={() => setView("select")}
-        />
-      )}
+        {token && view === "results" && (
+          <ResultsPage
+            result={matchResult}
+            profileLabel={activeProfile?.label}
+            onBack={() => setView("select")}
+          />
+        )}
 
-      {loading && <p style={{ textAlign: "center", color: "var(--text-muted)" }}>Loading...</p>}
+        {loading && <p style={{ textAlign: "center", color: "var(--ink-muted)" }}>Loading...</p>}
+      </div>
     </div>
   );
 }

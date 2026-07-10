@@ -25,8 +25,6 @@ export default function ResultsPage({ result, profileLabel, onBack }) {
     });
   });
 
-  let runningRank = 1;
-
   return (
     <div>
       <button className="btn-link" onClick={onBack} style={{ marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
@@ -35,25 +33,29 @@ export default function ResultsPage({ result, profileLabel, onBack }) {
 
       <div className="card">
         <h2>Results for {profileLabel}</h2>
-        <p style={{ color: "var(--text-muted)", margin: 0 }}>
-          {result.confirmedCount} confirmed match{result.confirmedCount !== 1 ? "es" : ""}
-          {result.possibleCount > 0 && `, ${result.possibleCount} possible match${result.possibleCount !== 1 ? "es" : ""} pending verification`}
-        </p>
+        <div className="summary-strip">
+          <div className="summary-pill confirmed">
+            <span className="num">{result.confirmedCount}</span>
+            <span className="label">Confirmed Match{result.confirmedCount !== 1 ? "es" : ""}</span>
+          </div>
+          {result.possibleCount > 0 && (
+            <div className="summary-pill possible">
+              <span className="num">{result.possibleCount}</span>
+              <span className="label">Need Verification</span>
+            </div>
+          )}
+        </div>
       </div>
 
-      {Object.entries(grouped).map(([category, schemes]) => {
-        const startRank = runningRank;
-        runningRank += schemes.length;
-        return (
-          <CategorySection
-            key={category}
-            category={category}
-            schemes={schemes}
-            startRank={startRank}
-            onSelectScheme={setSelectedScheme}
-          />
-        );
-      })}
+      {Object.entries(grouped).map(([category, schemes]) => (
+        <CategorySection
+          key={category}
+          category={category}
+          schemes={schemes}
+          startRank={1}
+          onSelectScheme={setSelectedScheme}
+        />
+      ))}
 
       <SchemeDetailModal scheme={selectedScheme} onClose={() => setSelectedScheme(null)} />
     </div>

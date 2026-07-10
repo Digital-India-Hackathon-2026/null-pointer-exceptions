@@ -1,5 +1,4 @@
 # SchemeSaathi
-### Team: NULL POINTER EXCEPTIONS
 
 AI-assisted government & private scheme finder for India. Enter a profile once,
 get a ranked list of eligible schemes (grouped by category), see exactly what

@@ -11,7 +11,7 @@ export default function ProfileSelector({ profiles, onSelect, onAddNew }) {
 
       {self ? (
         <div className="profile-chip" onClick={() => onSelect(self)}>
-          <div><strong>{self.label}</strong> <span style={{ color: "var(--text-muted)" }}>(You)</span></div>
+          <div><strong>{self.label}</strong> <span style={{ color: "var(--ink-muted)" }}>(You)</span></div>
           <FaChevronRight color="#9ca3af" />
         </div>
       ) : (

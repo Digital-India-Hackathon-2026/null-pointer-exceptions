@@ -29,7 +29,7 @@ export default function ProfileForm({ isSelf, initialData, onSubmit, onCancel })
   return (
     <div className="card">
       <h2>{isSelf ? "Tell us about yourself" : "Tell us about them"}</h2>
-      <p style={{ color: "var(--text-muted)", marginTop: -8, fontSize: "0.9rem" }}>
+      <p style={{ color: "var(--ink-muted)", marginTop: -8, fontSize: "0.9rem" }}>
         Don't know an exact figure? Just tick "Not Sure" — we'll still show possible matches.
       </p>
 
