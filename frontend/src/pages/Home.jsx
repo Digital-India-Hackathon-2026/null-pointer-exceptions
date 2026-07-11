@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ArrowRight, GraduationCap, Wheat, Briefcase, Heart, Users, Rocket,
@@ -18,6 +18,67 @@ const iconMap = {
 const Home = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const [listOfPositives, setListOfPositives] = useState([]);
+
+  useEffect(() => {
+    const loadPositives = async () => {
+      let localReviews = {};
+      try {
+        localReviews = JSON.parse(localStorage.getItem('scheme_reviews') || '{}');
+      } catch (e) {
+        localReviews = {};
+      }
+
+      // Default seed reviews
+      const defaultReviews = {
+        'pm-kisan': { rating: 'positive', note: 'Extremely fast disbursement', badgeText: 'Highly Reliable' },
+        'pm-yasasvi': { rating: 'positive', note: 'Very useful educational support', badgeText: 'Great Support' },
+        'mudra-yojana': { rating: 'positive', note: 'Helped start my business', badgeText: 'Highly Recommended' }
+      };
+
+      const finalReviews = { ...defaultReviews, ...localReviews };
+
+      // Load DB schemes
+      let dbSchemes = [];
+      try {
+        const BASE = "/api";
+        const res = await fetch(`${BASE}/schemes`);
+        if (res.ok) {
+          dbSchemes = await res.json();
+        }
+      } catch (e) {
+        console.error(e);
+      }
+
+      const combined = [...SCHEMES];
+      dbSchemes.forEach(dbS => {
+        if (!combined.some(item => item.id === dbS._id)) {
+          combined.push({
+            id: dbS._id,
+            title: dbS.name,
+            ...dbS
+          });
+        }
+      });
+
+      const matched = [];
+      combined.forEach(s => {
+        const review = finalReviews[s.id || s._id];
+        if (review && review.rating === 'positive') {
+          matched.push({
+            id: s.id || s._id,
+            title: s.title || s.name,
+            badgeText: review.badgeText || review.note || 'Highly Reliable'
+          });
+        }
+      });
+
+      setListOfPositives(matched);
+    };
+
+    loadPositives();
+  }, []);
+
   const featured = SCHEMES.filter((s) => s.featured).slice(0, 6);
 
   return (
@@ -60,6 +121,32 @@ const Home = () => {
                 {t('browseAll')}
               </Button>
             </div>
+
+            {/* Highly Rated Schemes Access */}
+            {listOfPositives.length > 0 && (
+              <div className="mt-8 max-w-md p-4 bg-white/80 border border-slate-200/80 rounded-2xl shadow-sm backdrop-blur">
+                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <Star size={13} className="text-amber-500 fill-amber-500 animate-spin" style={{ animationDuration: '3s' }} />
+                  Highly Recommended by Users
+                </label>
+                <select
+                  onChange={(e) => {
+                    if (e.target.value) {
+                      navigate(`/schemes/${e.target.value}`);
+                    }
+                  }}
+                  className="w-full h-11 px-3 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all cursor-pointer"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a recommended program...</option>
+                  {listOfPositives.map(s => (
+                    <option key={s.id} value={s.id}>
+                      👍 {s.title} ({s.badgeText})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-slate-500">
               <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} className="text-emerald-600" /> Verified government sources</span>

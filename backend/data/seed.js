@@ -12,7 +12,7 @@ const schemes = [
     eligibility: { minAge: 18, maxAge: 150, gender: "any", maxIncome: null, occupation: ["farmer"], disabilityRequired: false, maritalStatus: [], states: [], socialCategory: [] },
     benefitAmount: 6000,
     benefitDescription: "₹6,000 per year in 3 installments",
-    deadline: null,
+    deadline: "2026-07-15",
     numDocuments: 3,
     numSteps: 2,
     documentsRequired: ["Aadhaar Card", "Land Records / Khatauni", "Bank Passbook"],
@@ -48,7 +48,7 @@ const schemes = [
     eligibility: { minAge: 18, maxAge: 150, gender: "female", maxIncome: 200000, occupation: [], disabilityRequired: false, maritalStatus: ["widow"], states: [], socialCategory: [] },
     benefitAmount: 30000,
     benefitDescription: "₹30,000 one-time + monthly pension eligibility",
-    deadline: "2026-08-15",
+    deadline: "2026-07-20",
     numDocuments: 5,
     numSteps: 4,
     documentsRequired: ["Husband's Death Certificate", "Income Certificate", "Aadhaar Card", "Bank Passbook", "BPL Card (if available)"],
@@ -66,7 +66,7 @@ const schemes = [
     eligibility: { minAge: 40, maxAge: 150, gender: "female", maxIncome: 150000, occupation: [], disabilityRequired: false, maritalStatus: ["widow"], states: [], socialCategory: [] },
     benefitAmount: 15000,
     benefitDescription: "₹1,250/month pension (annualized)",
-    deadline: null,
+    deadline: "2026-09-15",
     numDocuments: 3,
     numSteps: 2,
     documentsRequired: ["Aadhaar Card", "BPL Certificate", "Bank Passbook"],
@@ -84,7 +84,7 @@ const schemes = [
     eligibility: { minAge: 17, maxAge: 30, gender: "any", maxIncome: 300000, occupation: [], disabilityRequired: false, maritalStatus: [], states: [], socialCategory: [] },
     benefitAmount: 100000,
     benefitDescription: "Up to ₹1,00,000 towards tuition",
-    deadline: "2026-07-31",
+    deadline: "2026-07-05",
     numDocuments: 4,
     numSteps: 3,
     documentsRequired: ["Admission Letter", "Income Certificate", "Aadhaar Card", "Academic Marksheets"],
@@ -102,7 +102,7 @@ const schemes = [
     eligibility: { minAge: 21, maxAge: 60, gender: "female", maxIncome: null, occupation: ["business", "entrepreneur"], disabilityRequired: false, maritalStatus: [], states: [], socialCategory: [] },
     benefitAmount: 500000,
     benefitDescription: "Loan up to ₹5,00,000 at subsidized interest",
-    deadline: null,
+    deadline: "2026-08-20",
     numDocuments: 6,
     numSteps: 5,
     documentsRequired: ["Business Plan", "Aadhaar & PAN", "Bank Statements (6 months)", "Address Proof", "Photographs", "Existing loan statements (if any)"],
@@ -120,7 +120,7 @@ const schemes = [
     eligibility: { minAge: 0, maxAge: 150, gender: "any", maxIncome: 250000, occupation: [], disabilityRequired: false, maritalStatus: [], states: [], socialCategory: [] },
     benefitAmount: 500000,
     benefitDescription: "₹5,00,000 health cover per family/year",
-    deadline: null,
+    deadline: "2026-12-31",
     numDocuments: 2,
     numSteps: 2,
     documentsRequired: ["Aadhaar Card", "Ration Card / Family ID"],
@@ -174,7 +174,7 @@ const schemes = [
     eligibility: { minAge: 18, maxAge: 150, gender: "any", maxIncome: 300000, occupation: [], disabilityRequired: true, maritalStatus: [], states: [], socialCategory: [] },
     benefitAmount: 300000,
     benefitDescription: "Loan up to ₹3,00,000 at low interest",
-    deadline: null,
+    deadline: "2026-10-15",
     numDocuments: 5,
     numSteps: 4,
     documentsRequired: ["Disability Certificate", "Business Plan", "Income Certificate", "Aadhaar Card", "Bank Passbook"],
@@ -634,6 +634,127 @@ const schemes = [
     isPrerequisiteFor: []
   }
 ];
+
+// Programmatic Generator to add 40 additional realistic schemes (making 50 in total)
+const statesPool = ["Maharashtra", "Tamil Nadu", "Delhi", "Telangana", "West Bengal", "Uttar Pradesh", "Karnataka", "Gujarat", "Punjab", "Bihar"];
+const templates = [
+  {
+    name: "Higher Education Scholarship",
+    providerType: "government",
+    source: "State Department of Education",
+    categories: ["student"],
+    description: "Financial assistance for pursuing post-matric studies in general and technical streams.",
+    minAge: 16, maxAge: 25, gender: "any", maxIncome: 250000, occupation: ["student"],
+    benefitAmount: 18000, benefitDescription: "₹18,000 yearly scholarship",
+    documents: ["Marksheet", "Income certificate", "Aadhaar Card"],
+    steps: ["Register on state portal", "Submit application", "Verification by college"],
+    applyMode: "online", applyUrl: "https://education.gov.in"
+  },
+  {
+    name: "Youth Entrepreneurship Loan Facilitation",
+    providerType: "private",
+    source: "Industrial Development Union",
+    categories: ["entrepreneur"],
+    description: "Collateral free working capital and equipment loan for young local business starters.",
+    minAge: 21, maxAge: 45, gender: "any", maxIncome: 600000, occupation: ["entrepreneur"],
+    benefitAmount: 200000, benefitDescription: "Subsidized loan up to ₹2,00,050",
+    documents: ["Project Report", "Aadhaar Card", "PAN Card", "ITR"],
+    steps: ["Submit business proposal", "Interview", "Verification & approval"],
+    applyMode: "both", applyUrl: "https://startup.helper.org"
+  },
+  {
+    name: "Krishi Samridhi Subsidy",
+    providerType: "government",
+    source: "Department of Agriculture",
+    categories: ["farmer"],
+    description: "Subsidy for purchasing modern agricultural machinery and organic seeds.",
+    minAge: 18, maxAge: 70, gender: "any", maxIncome: 300000, occupation: ["farmer"],
+    benefitAmount: 25000, benefitDescription: "₹25,000 seed subsidy",
+    documents: ["Land ownership proof", "Aadhaar Card", "Bank copy"],
+    steps: ["Fill subsidy forms at block office", "Biometrics validation", "Subsidized delivery"],
+    applyMode: "offline", applyUrl: "https://agricoop.nic.in"
+  },
+  {
+    name: "Vulnerable Widow Self-Reliance Grant",
+    providerType: "government",
+    source: "Ministry of Social Justice Welfare",
+    categories: ["widow", "woman"],
+    description: "Financial grant to help widows establish self-employment ventures.",
+    minAge: 35, maxAge: 65, gender: "female", maxIncome: 180000, occupation: [],
+    benefitAmount: 50000, benefitDescription: "₹50,000 one-time setup grant",
+    documents: ["Death certificate", "Identity proof", "BPL Certificate"],
+    steps: ["Submit request to block social officer", "Verification visit", "DBT transfer"],
+    isWidow: true,
+    applyMode: "offline", applyUrl: "https://socialwelfare.nic.in"
+  },
+  {
+    name: "Senior Citizens Healthcare Support Plus",
+    providerType: "private",
+    source: "Red Cross & Private Alliance",
+    categories: ["senior"],
+    description: "Subsidized health insurance and diagnostics cover for elderly people.",
+    minAge: 60, maxAge: 95, gender: "any", maxIncome: 400000, occupation: [],
+    benefitAmount: 50000, benefitDescription: "Diagnostics offset up to ₹50,000/year",
+    documents: ["Age proof", "Aadhaar Card", "Health declarations"],
+    steps: ["Register online", "Health screening booking", "Receive support card"],
+    applyMode: "online", applyUrl: "https://redcross.org"
+  },
+  {
+    name: "Unorganized Labours Medical Aid",
+    providerType: "government",
+    source: "Labour Welfare Board",
+    categories: ["employee", "low-income"],
+    description: "Emergency medical expense coverage for daily wage workers and unorganized laborers.",
+    minAge: 18, maxAge: 55, gender: "any", maxIncome: 150000, occupation: ["employee"],
+    benefitAmount: 30000, benefitDescription: "Medical coverage up to ₹30,000/year",
+    documents: ["Labour registration ID", "Medical bills", "Aadhaar Card"],
+    steps: ["Register with Labour card", "Submit bills", "Direct bank refund"],
+    applyMode: "both", applyUrl: "https://labour.gov.in"
+  }
+];
+
+// Loop to generate 40 additional schemes
+for (let i = 0; i < 40; i++) {
+  const temp = templates[i % templates.length];
+  const state = statesPool[i % statesPool.length];
+
+  // Set explicit testing deadline dates (closing soon, expired, active)
+  let deadline = null;
+  const deadlineDays = (i % 7) * 5 + 4; // e.g. 4, 9, 14, 19, 24, 29, 34 days
+  const today = new Date();
+  today.setDate(today.getDate() + (i % 2 === 0 ? deadlineDays : -deadlineDays + 10));
+
+  const schemeObj = {
+    name: `${state} ${temp.name} (Phase ${Math.floor(i / 10) + 1})`,
+    providerType: temp.providerType,
+    source: `${state} ${temp.source}`,
+    categories: temp.categories,
+    description: `${temp.description} Dedicated program for eligible candidates in ${state}.`,
+    eligibility: {
+      minAge: temp.minAge,
+      maxAge: temp.maxAge,
+      gender: temp.gender,
+      maxIncome: temp.maxIncome,
+      occupation: temp.occupation,
+      disabilityRequired: false,
+      maritalStatus: temp.isWidow ? ["widow"] : [],
+      states: [state],
+      socialCategory: []
+    },
+    benefitAmount: temp.benefitAmount + (i * 1000),
+    benefitDescription: temp.benefitDescription.replace(/\d+,\d+/g, (temp.benefitAmount + (i * 1000)).toLocaleString('en-IN')),
+    deadline: today.toISOString().split('T')[0],
+    numDocuments: temp.documents.length,
+    numSteps: temp.steps.length,
+    documentsRequired: temp.documents,
+    applicationSteps: temp.steps,
+    applyMode: temp.applyMode,
+    applyUrl: temp.applyUrl,
+    isPrerequisiteFor: []
+  };
+
+  schemes.push(schemeObj);
+}
 
 async function seed() {
   await mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/scheme-finder");

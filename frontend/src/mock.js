@@ -63,7 +63,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Direct Benefit', 'Income Support'],
     benefit: '₹6,000 / year',
-    deadline: 'Ongoing',
+    deadline: '2026-07-15',
     description: 'Direct income support of ₹6,000 per year in three equal installments to all landholding farmer families across the country.',
     eligibility: {
       age: [18, 100],
@@ -119,7 +119,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Loan', 'Business', 'MSME'],
     benefit: 'Loan up to ₹10 lakh',
-    deadline: 'Ongoing',
+    deadline: '2026-07-19',
     description: 'Collateral-free loans up to ₹10 lakh for micro and small enterprises through Shishu, Kishore, and Tarun categories.',
     eligibility: {
       age: [18, 65],
@@ -147,7 +147,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Savings', 'Girl Child'],
     benefit: '8.2% interest rate',
-    deadline: 'Ongoing',
+    deadline: '2026-09-05',
     description: 'Small savings scheme for the girl child offering attractive interest rates and tax benefits for parents.',
     eligibility: {
       age: [0, 10],
@@ -175,7 +175,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Pension', 'Retirement'],
     benefit: '₹1,000 - ₹5,000 monthly pension',
-    deadline: 'Ongoing',
+    deadline: '2026-08-25',
     description: 'Guaranteed monthly pension scheme for citizens in the unorganized sector between 18 and 40 years.',
     eligibility: {
       age: [18, 40],
@@ -203,7 +203,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Training', 'Certification', 'Free'],
     benefit: 'Free training + certification',
-    deadline: 'Ongoing',
+    deadline: '2026-07-28',
     description: 'Free short-term skill training and certification to help youth become employable and earn a livelihood.',
     eligibility: {
       age: [15, 45],
@@ -231,7 +231,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Credit', 'Loan', 'Agriculture'],
     benefit: 'Credit up to ₹3 lakh @ 4%',
-    deadline: 'Ongoing',
+    deadline: '2026-09-10',
     description: 'Short-term credit for farmers to meet cultivation needs, post-harvest expenses, and allied activities at subsidized interest.',
     eligibility: {
       age: [18, 75],
@@ -259,7 +259,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['LPG', 'Free Connection'],
     benefit: 'Free LPG connection',
-    deadline: 'Ongoing',
+    deadline: '2026-10-05',
     description: 'Free LPG connection to women from below poverty line households to promote clean cooking fuel.',
     eligibility: {
       age: [18, 100],
@@ -315,7 +315,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Startup', 'Seed Funding'],
     benefit: 'Up to ₹50 lakh funding',
-    deadline: 'Ongoing',
+    deadline: '2026-11-15',
     description: 'Financial assistance to startups for proof of concept, prototype development, product trials, and market entry.',
     eligibility: {
       age: [18, 65],
@@ -401,7 +401,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Agri-Training', 'CSR', 'Livelihood'],
     benefit: 'Free agri-inputs + training',
-    deadline: 'Ongoing',
+    deadline: '2026-08-20',
     description: 'CSR initiative providing small and marginal farmers with training on modern agricultural practices, quality seeds, and market linkages.',
     eligibility: {
       age: [18, 70],
@@ -457,7 +457,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Pension', 'Annuity', 'Insurance'],
     benefit: 'Guaranteed lifelong annuity',
-    deadline: 'Ongoing',
+    deadline: '2026-12-31',
     description: 'Single-premium immediate annuity plan offering guaranteed lifelong pension income for senior citizens.',
     eligibility: {
       age: [40, 80],
@@ -485,7 +485,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Upskilling', 'Tech', 'Certification'],
     benefit: 'Subsidized tech certifications',
-    deadline: 'Ongoing',
+    deadline: '2026-10-30',
     description: 'Industry-backed upskilling platform offering courses and certifications in emerging technologies at subsidized rates for IT professionals.',
     eligibility: {
       age: [18, 50],
@@ -512,7 +512,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Healthcare', 'Insurance', 'Free Medical'],
     benefit: '₹5 Lakh health cover / family / year',
-    deadline: 'Ongoing',
+    deadline: '2026-12-30',
     description: 'The world’s largest health insurance scheme providing free secondary and tertiary care hospitalization to vulnerable families.',
     eligibility: {
       age: [0, 100],
@@ -539,7 +539,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Loan', 'Street Vendor', 'Micro-credit'],
     benefit: 'Working capital loan up to ₹50,000',
-    deadline: 'Ongoing',
+    deadline: '2026-11-12',
     description: 'A special micro-credit facility scheme for providing affordable working capital loans to street vendors to resume their livelihoods.',
     eligibility: {
       age: [18, 65],
@@ -566,7 +566,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Insurance', 'Accident Cover'],
     benefit: '₹2 Lakh accident insurance',
-    deadline: 'Ongoing',
+    deadline: '2026-08-18',
     description: 'An affordable, government-backed accident insurance scheme for citizens with auto-debit facility from bank accounts.',
     eligibility: {
       age: [18, 70],
@@ -593,7 +593,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Maternity Benefit', 'Direct Benefit'],
     benefit: '₹5,000 cash incentive',
-    deadline: 'Ongoing',
+    deadline: '2026-09-22',
     description: 'A maternity benefit program providing direct cash incentives to pregnant and lactating mothers for the first living child.',
     eligibility: {
       age: [19, 45],
@@ -620,7 +620,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Pension', 'Unorganized Sector'],
     benefit: '₹3,000 guaranteed monthly pension',
-    deadline: 'Ongoing',
+    deadline: '2026-08-28',
     description: 'A voluntary and contributory pension scheme for unorganized workers like street vendors, rickshaw pullers, and domestic helpers.',
     eligibility: {
       age: [18, 40],
@@ -701,7 +701,7 @@ export const SCHEMES = [
     state: 'All India',
     tags: ['Private', 'Welfare', 'Commercial Driver'],
     benefit: 'Scholarship + ₹10 Lakh Life Cover',
-    deadline: 'Ongoing',
+    deadline: '2026-07-05',
     description: 'A dedicated welfare initiative designed to provide financial, health, and academic security to commercial vehicle drivers and owner-drivers.',
     eligibility: {
       age: [18, 60],
@@ -1195,6 +1195,128 @@ export const SCHEMES = [
     featured: false,
   }
 ];
+
+// Expand to 50 items programmatically
+const statesPool = ["Maharashtra", "Tamil Nadu", "Delhi", "Telangana", "West Bengal", "Uttar Pradesh", "Karnataka", "Gujarat", "Punjab", "Bihar"];
+const extraTemplates = [
+  {
+    name: "Higher Education Scholarship",
+    ministry: "State Department of Education",
+    category: "student",
+    description: "Financial assistance for pursuing post-matric studies in general and technical streams.",
+    age: [16, 25],
+    income: 250000,
+    categories: ["any"],
+    occupation: ["student"],
+    gender: ["any"],
+    benefit: "₹18,000 yearly scholarship",
+    documents: ["Marksheet", "Income certificate", "Aadhaar Card"],
+    applyLink: "https://education.gov.in"
+  },
+  {
+    name: "Youth Entrepreneurship Loan Facilitation",
+    ministry: "Private: Industrial Development Union",
+    category: "entrepreneur",
+    description: "Collateral free working capital and equipment loan for young local business starters.",
+    age: [21, 45],
+    income: 600000,
+    categories: ["any"],
+    occupation: ["entrepreneur"],
+    gender: ["any"],
+    benefit: "Subsidized loan up to ₹2,00,050",
+    documents: ["Project Report", "Aadhaar Card", "PAN Card", "ITR"],
+    applyLink: "https://startup.helper.org"
+  },
+  {
+    name: "Krishi Samridhi Subsidy",
+    ministry: "Ministry of Agriculture",
+    category: "farmer",
+    description: "Subsidy for purchasing modern agricultural machinery and organic seeds.",
+    age: [18, 70],
+    income: 300000,
+    categories: ["any"],
+    occupation: ["farmer"],
+    gender: ["any"],
+    benefit: "₹25,000 seed subsidy",
+    documents: ["Land ownership proof", "Aadhaar Card", "Bank copy"],
+    applyLink: "https://agricoop.nic.in"
+  },
+  {
+    name: "Vulnerable Widow Self-Reliance Grant",
+    ministry: "Ministry of Social Justice Welfare",
+    category: "women",
+    description: "Financial grant to help widows establish self-employment ventures.",
+    age: [35, 65],
+    income: 180000,
+    categories: ["any"],
+    occupation: ["any"],
+    gender: ["female"],
+    benefit: "₹50,000 one-time setup grant",
+    documents: ["Death certificate", "Identity proof", "BPL Certificate"],
+    applyLink: "https://socialwelfare.nic.in"
+  },
+  {
+    name: "Senior Citizens Healthcare Support Plus",
+    ministry: "Private: Red Cross Alliance",
+    category: "senior",
+    description: "Subsidized health insurance and diagnostics cover for elderly people.",
+    age: [60, 95],
+    income: 400000,
+    categories: ["any"],
+    occupation: ["any"],
+    gender: ["any"],
+    benefit: "Diagnostics offset up to ₹50,000/year",
+    documents: ["Age proof", "Aadhaar Card", "Health declarations"],
+    applyLink: "https://redcross.org"
+  },
+  {
+    name: "Unorganized Labours Medical Aid",
+    ministry: "Ministry of Labour",
+    category: "employee",
+    description: "Emergency medical expense coverage for daily wage workers and unorganized laborers.",
+    age: [18, 55],
+    income: 150000,
+    categories: ["any"],
+    occupation: ["employee"],
+    gender: ["any"],
+    benefit: "Medical coverage up to ₹30,000/year",
+    documents: ["Labour registration ID", "Medical bills", "Aadhaar Card"],
+    applyLink: "https://labour.gov.in"
+  }
+];
+
+// Generate 23 items to reach 50 mock schemes
+for (let i = 0; i < 23; i++) {
+  const temp = extraTemplates[i % extraTemplates.length];
+  const state = statesPool[i % statesPool.length];
+
+  const deadlineDays = (i % 7) * 5 + 4; // e.g. 4, 9, 14, 19, 24, 29, 34 days
+  const today = new Date();
+  today.setDate(today.getDate() + (i % 2 === 0 ? deadlineDays : -deadlineDays + 10));
+
+  SCHEMES.push({
+    id: `extra-scheme-${i}`,
+    title: `${state} ${temp.name} (Phase ${Math.floor(i / 10) + 1})`,
+    ministry: temp.ministry,
+    category: temp.category,
+    state: state,
+    tags: [temp.category, 'State Plan'],
+    benefit: temp.benefit,
+    deadline: today.toISOString().split('T')[0],
+    description: `${temp.description} Dedicated program for eligible candidates in ${state}.`,
+    eligibility: {
+      age: temp.age,
+      income: temp.income,
+      categories: temp.categories,
+      occupation: temp.occupation,
+      gender: temp.gender
+    },
+    benefits: [temp.benefit, "Mentorship and local guidance support"],
+    documents: temp.documents,
+    applyLink: temp.applyLink,
+    featured: false
+  });
+}
 
 export const STATS = [
   { label: 'Active Schemes', value: '160+', icon: 'Layers' },

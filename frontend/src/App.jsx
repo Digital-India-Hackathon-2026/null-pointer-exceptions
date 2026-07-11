@@ -29,7 +29,7 @@ function App() {
           </main>
           <Footer />
           <ChatBot />
-          <Toaster position="top-right" />
+          <Toaster position="top-right" closeButton />
         </div>
       </BrowserRouter>
     </LanguageProvider>
